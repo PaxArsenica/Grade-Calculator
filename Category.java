@@ -27,7 +27,7 @@ public class Category {
 		this.name = newName;
 	}
 
-	public void changeWeight(double newWeight) {
+	public void changeWeight(int newWeight) {
 		this.weight = newWeight;
 	}
 
@@ -37,6 +37,14 @@ public class Category {
 
 	public int getWeight() {
 		return weight;
+	}
+
+	public double average() {
+		double sum = 0;
+		for(Grade g : grades) {
+			sum += g.getValue();
+		}
+		return sum / grades.size();
 	}
 		
 }
